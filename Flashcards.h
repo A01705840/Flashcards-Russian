@@ -5,6 +5,7 @@
 #define FLASHCARDS_H
 
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -17,6 +18,7 @@ class Flashcards{
         string status;
 		string palabra_esp;
         string palabra_rus;
+        string tipo;
 	public:
         Flashcards();
 		Flashcards(string pal_esp, string pal_rus, string tema, string stat, int dif);
@@ -29,6 +31,7 @@ class Flashcards{
         string get_status(){return status;};
         string get_palabra_esp(){return palabra_esp;}
         string get_palabra_rus(){return palabra_rus;}
+        string get_tipo(){return tipo;}
         void set_correcta(bool corr);
         void set_repeticiones(int rep);
         void set_dificultad(int dif);
@@ -36,6 +39,8 @@ class Flashcards{
         void set_status(string stat);
         void set_palabra_esp(string pal_esp);
         void set_palabra_rus(string pal_rus);
+        void set_tipo(string tip);
+        string to_string();
 };
 
 Flashcards::Flashcards(){
@@ -96,15 +101,25 @@ void Flashcards::set_palabra_rus(string pal_rus){
     palabra_rus = pal_rus;
 }
 
+void Flashcards::set_tipo(string tip){
+    tipo = tip;
+}
+
 void Flashcards::repetir(bool correcta){
     repeticiones++;
     status = "repetir"; 
 }
+
+string Flashcards::to_string(){
+    stringstream aux;
+    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
+    return aux.str();
+}
+
 //Clase Hija Objeto
 class Objeto: public Flashcards{
     private:
         string genero;
-        string tipo;
 
     public:
         Objeto(string pal_esp, string pal_rus, string tem, string stat, int dif):Flashcards(pal_esp, pal_rus, tem, stat, dif){
@@ -115,17 +130,24 @@ class Objeto: public Flashcards{
         };
         string get_genero(){return genero;}
         void set_genero(string gen);
+        string to_string();
+
 };
 
 void Objeto::set_genero(string gen){
     genero = gen;
 }
 
+string Objeto::to_string(){
+    stringstream aux;
+    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
+    return aux.str();
+}
+
 //Clase Hija Verbo
 class Verbo: public Flashcards{
     private:
         bool regular;
-        string tipo;
 
     public:
         Verbo(string pal_esp, string pal_rus, string tem, string stat, int dif, bool reg):Flashcards(pal_esp, pal_rus, tem, stat, dif){
@@ -134,17 +156,23 @@ class Verbo: public Flashcards{
         };
         bool get_regular(){return regular;}
         void set_regular(bool reg);
+        string to_string();
 };
 
 void Verbo::set_regular(bool reg){
     regular = reg;
 }
 
+string Verbo::to_string(){
+    stringstream aux;
+    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
+    return aux.str();
+}
+
 //Clase Hija Adjetivo
 class Adjetivo: public Flashcards{
     private:
         bool regular;
-        string tipo;
 
     public:
         Adjetivo(string pal_esp, string pal_rus, string tem, string stat, int dif, bool reg):Flashcards(pal_esp, pal_rus, tem, stat, dif){
@@ -153,10 +181,16 @@ class Adjetivo: public Flashcards{
         };
         bool get_regular(){return regular;}
         void set_regular(bool reg);
+        string to_string();
 };
 
 void Adjetivo::set_regular(bool reg){
     regular = reg;
 }
 
+string Adjetivo::to_string(){
+    stringstream aux;
+    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
+    return aux.str();
+}
 #endif

@@ -19,6 +19,7 @@ int main(){
     //consola_1.get_flashcard(""); 
     /*El problema aqui es poder enseñar la fc solo con una palabra en español
     pero como se está usando un arreglo debe de ser diferente*/
-
+    
+    consola_1.imprimir_fc();
 return 0;
 }

@@ -23,7 +23,9 @@ class Consola {
         float get_success_rate(){return success_rate;}
         void set_success_rate(float rate);
         void crea_flashcard_objeto(string pal_esp,  string pal_rus, string tem, string stat, int dif);
-        void crea_ejemplos();        
+        //Hacer flashcards de verbo y adjetivo.
+        void crea_ejemplos();       
+        void imprimir_fc();//impresión de arreglo de flashcards 
 };
 
 Consola::Consola(){
@@ -41,7 +43,7 @@ void Consola::set_success_rate(float rate){
     success_rate = rate;
 }
 
-void Consola::crea_flashcard_objeto(string pal_esp, string pal_rus, string tem, string stat, int dif){
+void Consola::crea_flashcard_objeto(string pal_esp,  string pal_rus, string tem, string stat, int dif){
     flashcard[nomina] = new Objeto(pal_esp,pal_rus, tem, stat, 1);
     nomina++;
 }
@@ -104,6 +106,11 @@ void Consola::crea_ejemplos(){
   nomina++;
   flashcard[nomina] = new Verbo("Menor","Младший", "Adjetivo", "Nueva", 1,true);
   nomina++;
+}
+
+void Consola::imprimir_fc(){
+    for (int i = 0; i < nomina; i++)
+    cout << flashcard[i] -> to_string();
 }
 
 #endif
