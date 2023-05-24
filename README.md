@@ -8,4 +8,9 @@ Las clases son Flashcards y sus clases hijas son Objeto, Verbo, Adjetivos. La cl
 El programa solo permite estudiar y crear flashcards y asignarles dificultad, correcto/incorrecto.
 
 ## Consideraciones
-El programa solo corre en la consola y esta hecho con c++ standard por lo que corre en todos los sistemas operativos
+El programa solo corre en la consola y esta hecho con c++ standard por lo que corre en todos los sistemas operativos.
+
+El programa está hecho para usarse con el idioma ruso. Por ejemplo:
++ Si se ponen palabras en francés, no serán optimas en el programa.
++ Si se ponen palabras como preposiciones, no se puede escoger un tipo de flashcard de preposiciones.
++ Si se ponen palabras en pasado, no se pueden diferenciar de las demás flashcards en otros tiempo.
