@@ -40,6 +40,7 @@ class Flashcards{
         void set_palabra_esp(string pal_esp);
         void set_palabra_rus(string pal_rus);
         void set_tipo(string tip);
+        virtual void felicitacion(){cout<<"Отлично!";};
         string to_string();
 };
 
@@ -116,81 +117,5 @@ string Flashcards::to_string(){
     return aux.str();
 }
 
-//Clase Hija Objeto
-class Objeto: public Flashcards{
-    private:
-        string genero;
 
-    public:
-        Objeto(string pal_esp, string pal_rus, string tem, string stat, int dif):Flashcards(pal_esp, pal_rus, tem, stat, dif){
-        tipo = "Objeto";
-        };
-        Objeto(): Flashcards("", "", "", "Nueva", 0) {
-            tipo = "Objeto";
-        };
-        string get_genero(){return genero;}
-        void set_genero(string gen);
-        string to_string();
-
-};
-
-void Objeto::set_genero(string gen){
-    genero = gen;
-}
-
-string Objeto::to_string(){
-    stringstream aux;
-    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
-    return aux.str();
-}
-
-//Clase Hija Verbo
-class Verbo: public Flashcards{
-    private:
-        bool regular;
-
-    public:
-        Verbo(string pal_esp, string pal_rus, string tem, string stat, int dif, bool reg):Flashcards(pal_esp, pal_rus, tem, stat, dif){
-        regular = reg;
-        tipo = "Verbo";
-        };
-        bool get_regular(){return regular;}
-        void set_regular(bool reg);
-        string to_string();
-};
-
-void Verbo::set_regular(bool reg){
-    regular = reg;
-}
-
-string Verbo::to_string(){
-    stringstream aux;
-    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
-    return aux.str();
-}
-
-//Clase Hija Adjetivo
-class Adjetivo: public Flashcards{
-    private:
-        bool regular;
-
-    public:
-        Adjetivo(string pal_esp, string pal_rus, string tem, string stat, int dif, bool reg):Flashcards(pal_esp, pal_rus, tem, stat, dif){
-        regular = reg;
-        tipo = "Adjetivo";
-        };
-        bool get_regular(){return regular;}
-        void set_regular(bool reg);
-        string to_string();
-};
-
-void Adjetivo::set_regular(bool reg){
-    regular = reg;
-}
-
-string Adjetivo::to_string(){
-    stringstream aux;
-    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
-    return aux.str();
-}
 #endif

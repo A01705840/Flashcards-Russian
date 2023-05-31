@@ -1,8 +1,8 @@
 //María José Soto Castro A01705840
-// Last Update: 21/05/2023 00:34 AM
 #include <iostream>
 
-#include "Flashcards.h" //biblioteca con mis objetos a usar
+//bibliotecas con mis objetos a usar
+#include "Flashcards.h" 
 
 #include "Consola.h"
 
@@ -10,16 +10,14 @@ using namespace std;
 
 int main(){
     //Consola Default
+    cout << "Hola, aqui estan tus flashcards!" << endl;
     Consola consola_1;
 
     consola_1.crea_ejemplos();
-
-
-    consola_1.crea_flashcard_objeto("Papá","Пвпа","Familia","Nueva",1);
-    //consola_1.get_flashcard(""); 
-    /*El problema aqui es poder enseñar la fc solo con una palabra en español
-    pero como se está usando un arreglo debe de ser diferente*/
+    //Para crear una nueva flashcard
+    consola_1.crea_flashcard_objeto("Papá","Пaпa","Familia","Nueva",1);
     
-    consola_1.imprimir_fc();
+    consola_1.estudiar_fc();
+
 return 0;
 }
