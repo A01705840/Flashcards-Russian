@@ -40,7 +40,7 @@ class Flashcards{
         void set_palabra_esp(string pal_esp);
         void set_palabra_rus(string pal_rus);
         void set_tipo(string tip);
-        virtual void felicitacion(){cout<<"Отлично!";};
+        virtual void felicitacion(){cout<<"Отлично!";}; //Poliformismo! Cambian las felicitaciones en base a el tipo de palabra.
         string to_string();
 };
 

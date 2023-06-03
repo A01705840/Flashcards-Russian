@@ -6,6 +6,9 @@
 #include <iostream>
 
 #include "Flashcards.h" //biblioteca con mis objetos a usar
+#include "Adjetivo.h"
+#include "Objeto.h"
+#include "Verbo.h"
 
 using namespace std;
 
@@ -25,6 +28,8 @@ class Consola {
         int get_nomina(){return nomina;}
         void set_nomina(int nomina);
         void crea_flashcard_objeto(string pal_esp,  string pal_rus, string tem, string stat, int dif);
+        void crea_flashcard_verbo(string pal_esp,  string pal_rus, string tem, string stat, int dif, bool reg);
+        void crea_flashcard_adjetivo(string pal_esp,  string pal_rus, string tem, string stat, int dif, bool reg);
         //Hacer flashcards de verbo y adjetivo.
         void crea_ejemplos();       
         void imprimir_fc();//impresión de arreglo de flashcards 
@@ -56,13 +61,25 @@ void Consola::crea_flashcard_objeto(string pal_esp,  string pal_rus, string tem,
 
 }
 
+void Consola::crea_flashcard_verbo(string pal_esp, string pal_rus, string tem, string stat, int dif, bool reg){
+    flashcard[nomina] = new Verbo(pal_esp,pal_rus, tem, stat, 1,reg);
+    set_nomina(1);
+
+}
+
+void Consola::crea_flashcard_adjetivo(string pal_esp, string pal_rus, string tem, string stat, int dif, bool reg){
+    flashcard[nomina] = new Adjetivo(pal_esp,pal_rus, tem, stat, 1,reg);
+    set_nomina(1);
+
+}
+
 /*Flashcards Consola::get_flashcard(string pal_esp){
     return flashcard[MAX];
 }*/
 
 void Consola::crea_ejemplos(){
 
-  flashcard[nomina] = new Objeto("Arbol","дерево", "Objetos", "Nueva", 1);
+  flashcard[nomina] = new Objeto("Arbol","Дерево", "Objetos", "Nueva", 1);
   set_nomina(1);
 
   flashcard[nomina] = new Objeto("Hola","Привет", "Saludos", "Nueva", 1);
@@ -159,6 +176,7 @@ void Consola::estudiar_fc(){
         else if (flashcard[i] -> get_palabra_rus() != p_ruso){
             cout << "INCORRECTO \n" << "La palabra era: \t" << flashcard[i] -> get_palabra_rus() << "\n\n";
             num_correcta = num_correcta;
+            flashcard[i] -> set_dificultad(2);
         }
     i++;
     }
