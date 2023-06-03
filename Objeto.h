@@ -24,7 +24,7 @@ class Objeto: public Flashcards{
         string get_genero(){return genero;}
         string to_string();
         void set_genero(string gen);
-        void felicitacion(){cout<<"Bay, хорошо!";}
+        void felicitacion(){cout<<"Bay, хорошо! \n ";}
 
 };
 
@@ -32,12 +32,6 @@ void Objeto::set_genero(string gen){
     genero = gen;
 }
 
-//Para darles finales a las palabras
-/*void Objeto::genero_ending(string genero){
-    if (genero == "femenino"){
-        cout << "-ы"<<endl;
-    }
-}*/
 string Objeto::to_string(){
     stringstream aux;
     aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";

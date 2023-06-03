@@ -73,9 +73,6 @@ void Consola::crea_flashcard_adjetivo(string pal_esp, string pal_rus, string tem
 
 }
 
-/*Flashcards Consola::get_flashcard(string pal_esp){
-    return flashcard[MAX];
-}*/
 
 void Consola::crea_ejemplos(){
 
@@ -128,32 +125,32 @@ void Consola::crea_ejemplos(){
   flashcard[nomina] = new Verbo("Amar","Лювить", "Verbo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Vivir","Живёть", "Verbo", "Nueva", 1,true);
+  flashcard[nomina] = new Verbo("Vivir","Живёть", "Verbo", "Nueva", 1,true);
   set_nomina(1);
 
   flashcard[nomina] = new Verbo("Ir","Идти", "Verbo", "Nueva", 1,true);
   set_nomina(1);
 
 
-  flashcard[nomina] = new Verbo("Sabroso","Вкусный", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Sabroso","Вкусный", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Hermoso","Красивый", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Hermoso","Красивый", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Fuerte","Громкий", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Fuerte","Громкий", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Tranquilo","Тихий", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Tranquilo","Тихий", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Bueno","Хорошо", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Bueno","Хорошо", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Mayor","Старший", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Mayor","Старший", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
-  flashcard[nomina] = new Verbo("Menor","Младший", "Adjetivo", "Nueva", 1,true);
+  flashcard[nomina] = new Adjetivo("Menor","Младший", "Adjetivo", "Nueva", 1,true);
   set_nomina(1);
 
 }
@@ -165,6 +162,7 @@ void Consola::imprimir_fc(){
 
 void Consola::estudiar_fc(){
     string p_ruso;
+    get_nomina();
     int num_correcta = 0;
     for (int i = 0; i < nomina;){
         cout << "Palabra en Español \t" << flashcard[i] -> get_palabra_esp() << "\n Palabra en ruso: ";
@@ -175,8 +173,8 @@ void Consola::estudiar_fc(){
         }
         else if (flashcard[i] -> get_palabra_rus() != p_ruso){
             cout << "INCORRECTO \n" << "La palabra era: \t" << flashcard[i] -> get_palabra_rus() << "\n\n";
-            num_correcta = num_correcta;
             flashcard[i] -> set_dificultad(2);
+            num_correcta = num_correcta;
         }
     i++;
     }

@@ -22,7 +22,7 @@ class Adjetivo: public Flashcards{
         bool get_regular(){return regular;}
         void set_regular(bool reg);
         string to_string();
-        void felicitacion(){cout<<"Супер!";}
+        void felicitacion(){cout<< "Супер!  \n ";}
 };
 
 void Adjetivo::set_regular(bool reg){

@@ -17,8 +17,13 @@ void menu(Consola consola_1){
     cin  >> op_1;
     while (op_1 == 1 or op_1 == 2){
         if (op_1 == 1){
-            consola_1.estudiar_fc();
-            op_1 = 1;
+            consola_1.estudiar_fc(); //Falta aún encontrar como evitar errores con el cambio de abecedario.
+            // RECOMENDACION: Busca las palabras en ruso en void Consola::crea_ejemplos() y copia y pegalas para la parte de estudiar por ahora.
+            // Papa = Пaпa
+            cout << "¿Qué más haras hoy? \n" << endl;
+            cout << "\n - Exit [0] \n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+            cin  >> op;
+            op_1 = op;
         }
         if (op_1 == 2){
             string pal_esp;
@@ -30,6 +35,11 @@ void menu(Consola consola_1){
             cout << "- Añadir Objeto [1] \n  - Añadir Verbo [2] \n - Añadir Adjetivo [3] \n " <<endl;
             cin  >> op_2;
             if (op_2 == 1){
+                //Ejemplo Objeto: 
+                /*pal_esp -> Helado
+                pal_rus -> мороженое
+                tema -> basico
+                */
                 cout << " \nEscribe la palabra en español: " <<endl;
                 cin >> pal_esp ;
                 cout << "\nEscribe la palabra en ruso: " <<endl;
@@ -47,6 +57,11 @@ void menu(Consola consola_1){
                 op_1 = op;
             }
             if (op_2 == 2){
+                //Ejemplo Verbo: 
+                /*pal_esp -> Brincar
+                pal_rus -> Прыгать
+                tema -> basico
+                */
                 cout << "\nEscribe la palabra en español: " <<endl;
                 cin >> pal_esp;
                 cout << "\nEscribe la palabra en ruso: " <<endl;
@@ -64,6 +79,11 @@ void menu(Consola consola_1){
                 op_2 = 0;
             }
             if (op_2 == 3){
+                //Ejemplo Adjetivo: 
+                /*pal_esp -> Malo
+                pal_rus -> плохой
+                tema -> basico
+                */
                 cout << "\nEscribe la palabra en español: " <<endl;
                 cin >> pal_esp;
                 cout << "\nEscribe la palabra en ruso: " <<endl;
