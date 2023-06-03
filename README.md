@@ -15,5 +15,5 @@ El programa está hecho para usarse con el idioma ruso. Por ejemplo:
 + Si se ponen palabras como preposiciones, no se puede escoger un tipo de flashcard de preposiciones.
 + Si se ponen palabras en pasado, no se pueden diferenciar de las demás flashcards en otros tiempo.
 
--- Es posible que no se tenga el teclado cirílico para poder correr el programa. Por ello adjunto la lista de palabras en los ejemplos para que se pruebe el programa: Palabras Español-Ruso.pdf
+-- Todavia existen complicaciones con el programa para que corra correctamente el ASCII en el alfabeto cirílico, por lo que recomiendo copiar y pegar las palabras desde donde se declaran las flashcards. Más info. dentro del código.
 
