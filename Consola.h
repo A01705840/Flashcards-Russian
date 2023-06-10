@@ -22,7 +22,6 @@ class Consola {
     
     public:
         Consola();
-        int contar_fc(Flashcards flashcard);
         double get_success_rate(){return success_rate;}
         void set_success_rate(float rate);
         int get_nomina(){return nomina;}
@@ -41,11 +40,11 @@ Consola::Consola(){
     nomina = 0;
 }
 
-int Consola::contar_fc(Flashcards flashcard){
+/*int Consola::contar_fc(Flashcards flashcard[]){
     int conteo;
-    conteo = sizeof(flashcard);
+    conteo = sizeof(flashcard[]);
     return conteo;
-}
+}*/
 
 void Consola::set_success_rate(float rate){
     success_rate = rate;
@@ -164,7 +163,7 @@ void Consola::estudiar_fc(){
     string p_ruso;
     get_nomina();
     int num_correcta = 0;
-    for (int i = 0; i < nomina;){
+    for (int i = 0; i < nomina;i++){
         cout << "Palabra en Español \t" << flashcard[i] -> get_palabra_esp() << "\n Palabra en ruso: ";
         cin >> p_ruso;
         if (flashcard[i] -> get_palabra_rus() == p_ruso){
@@ -176,9 +175,7 @@ void Consola::estudiar_fc(){
             flashcard[i] -> set_dificultad(2);
             num_correcta = num_correcta;
         }
-    i++;
     }
-    success_rate = (num_correcta/nomina)*100;
-    cout << success_rate << "%" << "\n";
+    cout << "Sacaste "<< num_correcta << " de " << nomina << endl;
 }
 #endif

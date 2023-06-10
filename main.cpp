@@ -110,7 +110,6 @@ int main(){
     //Consola Default
     Consola consola_1;
     consola_1.crea_ejemplos();
-    consola_1.crea_flashcard_objeto("Papá","Пaпa","Familia","Nueva",1);
 
     //Menu        
     menu(consola_1);
