@@ -19,6 +19,7 @@ class Flashcards{
 		string palabra_esp;
         string palabra_rus;
         string tipo;
+        string opcion;
 	public:
         Flashcards();
 		Flashcards(string pal_esp, string pal_rus, string tema, string stat, int dif);
@@ -32,6 +33,8 @@ class Flashcards{
         string get_palabra_esp(){return palabra_esp;}
         string get_palabra_rus(){return palabra_rus;}
         string get_tipo(){return tipo;}
+        string get_opcion(){return opcion;}
+        void set_opcion(string op);
         void set_correcta(bool corr);
         void set_repeticiones(int rep);
         void set_dificultad(int dif);
@@ -107,6 +110,10 @@ void Flashcards::set_tipo(string tip){
     tipo = tip;
 }
 
+void Flashcards::set_opcion(string op){
+    opcion = op;
+}
+
 void Flashcards::repetir(bool correcta){
     repeticiones++;
     status = "repetir"; 
@@ -115,7 +122,7 @@ void Flashcards::repetir(bool correcta){
 
 string Flashcards::to_string(){
     stringstream aux;
-    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  << "\n";
+    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  <<  endl;
     return aux.str();
 }
 

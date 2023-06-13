@@ -55,6 +55,7 @@ void menu(Consola consola_1){
                 op_2 = 0;
                 cin  >> op;
                 op_1 = op;
+                consola_1.asignar_opcion();
             }
             if (op_2 == 2){
                 //Ejemplo Verbo: 
@@ -77,6 +78,7 @@ void menu(Consola consola_1){
                 cin  >> op;
                 op_1 = op;
                 op_2 = 0;
+                consola_1.asignar_opcion();
             }
             if (op_2 == 3){
                 //Ejemplo Adjetivo: 
@@ -99,6 +101,7 @@ void menu(Consola consola_1){
                 cin  >> op;
                 op_1 = op;
                 op_2 = 0;
+                consola_1.asignar_opcion();
             }
             
         }
@@ -110,7 +113,8 @@ int main(){
     //Consola Default
     Consola consola_1;
     consola_1.crea_ejemplos();
-
+    consola_1.asignar_opcion();
+    consola_1.imprimir_fc();
     //Menu        
     menu(consola_1);
 

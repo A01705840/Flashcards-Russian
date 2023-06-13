@@ -33,18 +33,13 @@ class Consola {
         void crea_ejemplos();       
         void imprimir_fc();//impresión de arreglo de flashcards 
         void estudiar_fc();
+        void asignar_opcion();
 };
 
 Consola::Consola(){
     success_rate = 0;
     nomina = 0;
 }
-
-/*int Consola::contar_fc(Flashcards flashcard[]){
-    int conteo;
-    conteo = sizeof(flashcard[]);
-    return conteo;
-}*/
 
 void Consola::set_success_rate(float rate){
     success_rate = rate;
@@ -156,21 +151,27 @@ void Consola::crea_ejemplos(){
 
 void Consola::imprimir_fc(){
     for (int i = 0; i < nomina; i++)
-    cout << flashcard[i] -> to_string();
+    cout << flashcard[i] -> to_string() << "\n (" << flashcard[i] -> get_opcion() << ") \n" << endl;
 }
 
+void Consola::asignar_opcion(){
+    string opciones[100] = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","aa", "ab", "ac", "ad","ae","af","ag"};
+    for (int i = 0; i < nomina; i++)
+    flashcard[i] -> set_opcion(opciones[i]);
+
+}
 void Consola::estudiar_fc(){
-    string p_ruso;
+    string opcion;
     get_nomina();
     int num_correcta = 0;
     for (int i = 0; i < nomina;i++){
         cout << "Palabra en Español \t" << flashcard[i] -> get_palabra_esp() << "\n Palabra en ruso: ";
-        cin >> p_ruso;
-        if (flashcard[i] -> get_palabra_rus() == p_ruso){
+        cin >> opcion;
+        if (flashcard[i] -> get_opcion() == opcion){
             flashcard[i] -> felicitacion();
             num_correcta = num_correcta + 1;
         }
-        else if (flashcard[i] -> get_palabra_rus() != p_ruso){
+        else if (flashcard[i] -> get_palabra_rus() != opcion){
             cout << "INCORRECTO \n" << "La palabra era: \t" << flashcard[i] -> get_palabra_rus() << "\n\n";
             flashcard[i] -> set_dificultad(2);
             num_correcta = num_correcta;
