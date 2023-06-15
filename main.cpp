@@ -12,16 +12,19 @@ using namespace std;
 void menu(Consola consola_1){
     int op_1;
     int op;
-    cout << "Hola, estas listo para estudiar tus flashcards??" << endl;
-    cout << "\n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+    cout << "Hola, estas listo para estudiar tus flashcards??" << 
+        endl;
+    cout << "\n - Estudiar Flashcards [1]\n - Añadir Flashcard [2]\
+    \n"<< endl;
     cin  >> op_1;
     while (op_1 == 1 or op_1 == 2){
         if (op_1 == 1){
-            consola_1.estudiar_fc(); //Falta aún encontrar como evitar errores con el cambio de abecedario.
-            // RECOMENDACION: Busca las palabras en ruso en void Consola::crea_ejemplos() y copia y pegalas para la parte de estudiar por ahora.
-            // Papa = Пaпa
+            consola_1.estudiar_fc(); 
+            //Falta aún encontrar como evitar errores 
+            //con el cambio de abecedario.
             cout << "¿Qué más haras hoy? \n" << endl;
-            cout << "\n - Exit [0] \n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+            cout << "\n - Exit [0]\n - Estudiar Flashcards [1]\
+            \n - Añadir Flashcard [2] \n" << endl;
             cin  >> op;
             op_1 = op;
         }
@@ -31,8 +34,10 @@ void menu(Consola consola_1){
             string tem;
             bool reg;
             int op_2;
-            cout << "Para añadir una nueva flashcard elige que tipo de palabra es: " <<endl;
-            cout << "- Añadir Objeto [1] \n  - Añadir Verbo [2] \n - Añadir Adjetivo [3] \n " <<endl;
+            cout << "Para añadir una nueva flashcard elige \
+            que tipo de palabra es: " <<endl;
+            cout << "- Añadir Objeto [1] \n  - Añadir Verbo [2]\
+            \n - Añadir Adjetivo [3] \n " <<endl;
             cin  >> op_2;
             if (op_2 == 1){
                 //Ejemplo Objeto: 
@@ -40,18 +45,21 @@ void menu(Consola consola_1){
                 pal_rus -> мороженое
                 tema -> basico
                 */
-                cout << " \nEscribe la palabra en español: " <<endl;
+                cout << " \nEscribe la palabra en español: "<<endl;
                 cin >> pal_esp ;
                 cout << "\nEscribe la palabra en ruso: " <<endl;
                 cin >> pal_rus;
                 cout << "\nEscribe el tema: " <<endl;
                 cin >> tem;
-                consola_1.crea_flashcard_objeto(pal_esp,pal_rus,tem,"Nueva",1);
+                consola_1.crea_flashcard_objeto(pal_esp,
+                pal_rus,tem,"Nueva",1);
                 cout << "La flaschcard esta creada";
                 cout << "¿Qué más haras hoy? \n" << endl;
-                cout << "\n - Exit [0] \n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+                cout << "\n - Exit [0]\n - Estudiar Flashcards [1]\
+                \n - Añadir Flashcard [2] \n" << endl;
                 cout << "¿Qué más haras hoy? \n" << endl;
-                cout << "\n - Exit [0] \n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+                cout << "\n - Exit [0]\n - Estudiar Flashcards [1]\
+                \n - Añadir Flashcard [2] \n" << endl;
                 op_2 = 0;
                 cin  >> op;
                 op_1 = op;
@@ -69,12 +77,15 @@ void menu(Consola consola_1){
                 cin >> pal_rus;
                 cout << "\nEscribe el tema: " <<endl;
                 cin >> tem;
-                cout << "\nEs un verbo regular [TRUE [1] /FALSE [0]] " <<endl;
+                cout<<"\nEs un verbo regular [TRUE [1] /FALSE [0]]"
+                <<endl;
                 cin >> reg;
-                consola_1.crea_flashcard_verbo(pal_esp,pal_rus,tem,"Nueva",1,reg);
+                consola_1.crea_flashcard_verbo(pal_esp,pal_rus,tem,
+                "Nueva",1,reg);
                 cout << "La flaschcard esta creada";
                 cout << "¿Qué más haras hoy? \n" << endl;
-                cout << "\n - Exit [0] \n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+                cout << "\n - Exit [0]\n - Estudiar Flashcards [1]\
+                \n - Añadir Flashcard [2] \n" << endl;
                 cin  >> op;
                 op_1 = op;
                 op_2 = 0;
@@ -92,12 +103,15 @@ void menu(Consola consola_1){
                 cin >> pal_rus;
                 cout << "\nEscribe el tema: " <<endl;
                 cin >> tem;
-                cout << "\nEs un adjetivo regular [TRUE [1] /FALSE [0]] " <<endl;
+                cout << "\nEs un adjetivo regular \
+                [TRUE [1] /FALSE [0]] " <<endl;
                 cin >> reg;
-                consola_1.crea_flashcard_adjetivo(pal_esp,pal_rus,tem,"Nueva",1,reg);
+                consola_1.crea_flashcard_adjetivo(pal_esp,
+                pal_rus,tem,"Nueva",1,reg);
                 cout << "La flaschcard esta creada";
                 cout << "¿Qué más haras hoy? \n" << endl;
-                cout << "\n - Exit [0] \n - Estudiar Flashcards [1] \n - Añadir Flashcard [2] \n" << endl;
+                cout << "\n - Exit [0]\n - Estudiar Flashcards [1]\
+                \n - Añadir Flashcard [2] \n" << endl;
                 cin  >> op;
                 op_1 = op;
                 op_2 = 0;

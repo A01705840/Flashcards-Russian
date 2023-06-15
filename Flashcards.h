@@ -22,8 +22,10 @@ class Flashcards{
         string opcion;
 	public:
         Flashcards();
-		Flashcards(string pal_esp, string pal_rus, string tema, string stat, int dif);
-		Flashcards(string pal_esp, string pal_rus, string tema, string stat);
+		Flashcards(string pal_esp, string pal_rus, string tema, 
+        string stat, int dif);
+		Flashcards(string pal_esp, string pal_rus, string tema, 
+        string stat);
 		void repetir(bool correcta);
 		bool get_correcta(){return correcta;}
         int get_repeticiones(){return repeticiones;}
@@ -43,7 +45,9 @@ class Flashcards{
         void set_palabra_esp(string pal_esp);
         void set_palabra_rus(string pal_rus);
         void set_tipo(string tip);
-        virtual void felicitacion() = 0; //Poliformismo Cambian las felicitaciones en base a el tipo de palabra.
+        virtual void felicitacion() = 0; 
+        //Poliformismo Cambian las felicitaciones 
+        //en base a el tipo de palabra.
         virtual string to_string();
     
 };
@@ -58,7 +62,8 @@ Flashcards::Flashcards(){
     palabra_rus = "";
 }
 
-Flashcards::Flashcards(string pal_esp, string pal_rus, string tem, string stat, int dif){
+Flashcards::Flashcards(string pal_esp, string pal_rus, string tem, 
+string stat, int dif){
     correcta = true;
     repeticiones = 0;
     dificultad = dif;
@@ -68,7 +73,8 @@ Flashcards::Flashcards(string pal_esp, string pal_rus, string tem, string stat, 
     palabra_rus = pal_rus;
 }
 
-Flashcards::Flashcards(string pal_esp, string pal_rus, string tem, string stat){
+Flashcards::Flashcards(string pal_esp, string pal_rus, string tem,
+string stat){
     correcta = true;
     repeticiones = 0;
     dificultad = 0;
@@ -122,7 +128,9 @@ void Flashcards::repetir(bool correcta){
 
 string Flashcards::to_string(){
     stringstream aux;
-    aux << " \n Palabra en Español:  \t" << palabra_esp << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " << tipo  <<  endl;
+    aux << " \n Palabra en Español:  \t" << palabra_esp 
+    << "\n Palabra en Ruso: \t " << palabra_rus << "\n Tipo: \t " 
+    << tipo  <<  endl;
     return aux.str();
 }
 
